@@ -48,46 +48,50 @@ nav a:hover{
   background-color: white;
   color: #0866FF;
   border: 2px solid #0866FF;
- 
   border-radius: 10px;
-
 }
 
-
+/*body styling*/
 .heading nav{
   display: flex;
+  width: 800px;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   color: gray;
+  gap: 5px;
+  padding-block: 50px;
 }
 
 .heading nav h1{
   color: black;
-  margin-bottom: 0%;
+  font-size: 30px;
 }
 
 section{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;   
+  justify-content: space-evenly;
+  align-items: center;
+  margin-block: 30px;
 }
 
-div{
-  background-color: rgb(238,237,237);
-  list-style-position: inside;
-  padding-top: 30px;
-  margin-top: 40px;
+.div-container{
+  background-color: #cacacc;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 400px;
   width: 350px;
-  border-radius: 5px;
-  list-style-position: outside;
+  border-radius: 10px;
 }
 
 ul button{
   display: flex;
   text-align: center;
-  background-color: rgb(70, 70, 243);
+  background-color: #0866FF;
   padding: 10px;
   border-radius: 5px;
   border:rgb(238,237,237);
@@ -96,24 +100,24 @@ ul button{
   margin-left: 40px;
   color: white;
 }
+ul button:hover{
+  background-color: white;
+  color: #0866FF;
+  border: 2px solid #0866FF;
+}
 
 .two{
   margin-top: 16px;
 }
 
 .cost{
-  color: blue;
+  color: #0866FF;
 }
 
 li{
   padding-bottom: 10px;
   padding-right: 30px;
 }
-
-
- 
-
-
 
 /*footer styling*/
 footer{

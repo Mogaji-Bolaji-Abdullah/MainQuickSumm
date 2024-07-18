@@ -6,6 +6,7 @@
 }
 body{
   background-color: #E8E8E8;
+  padding-bottom: 50px;
 }
 /*header styling*/
 header{
@@ -93,8 +94,6 @@ nav a:hover{
   gap: 10px;
   align-items: center;
   justify-content: center;
-}
-.google h3{
 }
 .google img{
   width: 20%;
