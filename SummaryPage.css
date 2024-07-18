@@ -48,6 +48,9 @@ nav a:hover{
   background-color: white;
   color: #0866FF;
   border: 2px solid #0866FF;
+
+  border-radius: 10px;
+
 }
 
 /*footer styling*/
@@ -100,4 +103,5 @@ footer{
 .contactus-container img{
   height: 30px;
   width: 30px;
+ 
 }

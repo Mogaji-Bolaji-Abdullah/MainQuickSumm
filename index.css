@@ -35,6 +35,23 @@ nav a:hover{
   color: #0866FF;
 }
 .sign-in{
+
+    background-color: #0866FF;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+.sign-in:hover{
+    background-color: white;
+    color: #0866FF;
+    border: 2px solid #0866FF;
+    border-radius: 10px;
+}
+
   background-color: #0866FF;
   color: white;
   font-size: 15px;
@@ -262,3 +279,4 @@ footer{
 
 
 /*Responsiveness*/
+ 
