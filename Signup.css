@@ -48,8 +48,158 @@ nav a:hover{
   background-color: white;
   color: #0866FF;
   border: 2px solid #0866FF;
- 
   border-radius: 10px;
+}
+.body{
+  height: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
- 
+.body h2{
+  color: black;
+  margin: 10px 0px;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  width: 300px;
+  
+}
+.text h2{
+  color: #1a1a1a;
+  font-size: 35px;
+  margin:18px 0px;
+}
+.text p {
+  color: #1a1a1a;
+  font-size: 20px;
+}
+.text h2 {
+  font-size: 30px;
+}
+
+.google{
+  background-color: #EEEDEB;
+  padding: 5px 8px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.google h3{
+}
+.google img{
+  width: 20%;
+  height: 37px;
+  object-fit: contain;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+/* form*/
+.form-container {
+  background-color: white;
+  border-radius: 30px;
+  padding: 20px;
+  width: 300px;
+}
+
+.form-container h4{
+  align-items: center;
+  margin: 8px 120px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #EEEDEB;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  
+}
+
+button:hover {
+  background-color: #3FA2F6;
+}
+
+.form-links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-links a {
+  color: blue;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.form-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form-container {
+      padding: 15px;
+      width: 90%;
+  }
+
+  .logo img {
+      width: 100px;
+  }
+
+  nav {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .google {
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  .form-actions button {
+      width: 100%;
+  }
 }
