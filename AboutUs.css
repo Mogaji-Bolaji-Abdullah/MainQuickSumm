@@ -103,3 +103,73 @@ footer{
   height: 30px;
   width: 30px;
 }
+
+
+
+
+
+
+
+
+
+.one{
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-left: 100px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.team{
+  margin-top: 0px;
+  padding-left: 50px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 0;
+}
+
+.wrap{
+  margin-top: 20px;
+  padding-left: 50px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 0px;
+  
+}
+
+img{
+  border-radius: 9px;
+  margin-bottom: 0;
+}
+
+.name{
+  display: flex;
+  text-align: center;
+}
+
+h3{
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1;
+}
+
+.members{
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-left: 50px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
