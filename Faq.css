@@ -7,6 +7,7 @@
 body{
   background-color: #E8E8E8;
 }
+/*header styling*/
 header{
   height: 80px;
   display: flex;
@@ -47,5 +48,60 @@ nav a:hover{
   background-color: white;
   color: #0866FF;
   border: 2px solid #0866FF;
+
   border-radius: 10px;
+
+}
+
+/*footer styling*/
+footer{
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  gap: 50px;
+}
+.footer-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo-container{
+  margin-top: -40px;
+  width: 350px;
+  font-size: 12px;
+  line-height: 16px;
+}
+.details-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 40%;
+  padding-top: 10px;
+}
+.quicklink-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quicklink-container a{
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
+.quicklink-container a:hover{
+  color: #0866FF;
+}
+.contactus-container h4{
+  margin-bottom: 10px;
+}
+.contactus-container img{
+  height: 30px;
+  width: 30px;
+
 }

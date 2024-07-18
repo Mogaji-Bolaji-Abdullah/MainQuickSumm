@@ -7,6 +7,7 @@
 body{
   background-color: #E8E8E8;
 }
+/*header styling*/
 header{
   height: 80px;
   display: flex;
@@ -47,5 +48,8 @@ nav a:hover{
   background-color: white;
   color: #0866FF;
   border: 2px solid #0866FF;
+ 
   border-radius: 10px;
+
+ 
 }
