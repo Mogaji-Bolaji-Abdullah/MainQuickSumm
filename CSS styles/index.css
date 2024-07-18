@@ -5,7 +5,7 @@
   font-family: Ubuntu, sans-serif;
 }
 body{
-  background-color: #F8F8F8;
+  background-color: white;
 }
 /*header styling*/
 header{
@@ -55,7 +55,7 @@ nav a:hover{
 
 /*Hero styling*/
 #hero{
-  height: 400px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,8 +64,11 @@ nav a:hover{
   gap: 25px;
 }
 #hero h1{
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 700;
+}
+#hero p{
+  font-size: 18px;
 }
 #hero span{
   color: #0866FF;
@@ -88,7 +91,7 @@ nav a:hover{
 
 /*Assistance styling*/
 #assistance{
-  height: 300px;
+  height: 500px;
   display: flex;
   flex-direction: row;
   background-color: #FFFBE9;
@@ -96,26 +99,32 @@ nav a:hover{
   align-items: center;
 }
 .assitance-container h3{
-  padding-bottom: 5px;
+  padding-bottom: 15px;
+  font-size: 40px;
+}
+.assitance-container p{
+  font-size: 18px;
 }
 .image{
-  width: 150px;
+  width: 250px;
 }
 
 /*Platform styling*/
 #platform{
-  height: 300px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap: 10px;
+  gap: 20px;
 }
 #platform h1{
   color: #0866FF;
+  font-size: 40px;
 }
 #platform p{
   color: #868687;
+  font-size: 20px;
 }
 
 /*Features Section*/
@@ -138,7 +147,7 @@ nav a:hover{
   border: 1px solid #ddd;
   text-align: center;
   padding: 8px;
-  height: 40px;
+  height: 60px;
   width: 40%;
   font-size: 17px;
   font-weight: bold;
@@ -163,13 +172,18 @@ nav a:hover{
   gap: 100px;
 }
 .image2{
-  height: 200px;
+  height: 250px;
+  width: 250px;
 }
 .info-container{
-  width: 400px;
+  width: 500px;
+}
+.info-container p{
+  font-size: 18px;
 }
 .info-container h3{
   padding-bottom: 10px;
+  font-size: 30px;
 }
 .third-container{
   display: flex;
@@ -178,6 +192,12 @@ nav a:hover{
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.third-container h2{
+  font-size: 30px;
+}
+.third-container p{
+  font-size: 18px;
 }
 .third-container span{
   color: #0866FF;

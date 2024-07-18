@@ -78,7 +78,7 @@ section{
 }
 
 .div-container{
-  background-color: #cacacc;
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -5,7 +5,7 @@
   font-family: Ubuntu, sans-serif;
 }
 body {
-  background-color: #e8e8e8;
+  background-color: white;
 }
 /*header styling*/
 header {
@@ -56,7 +56,7 @@ h1 {
   text-align: center;
   font-size: 40px;
   color: #121212;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 h1 span {
   color: #0866ff;
@@ -72,18 +72,22 @@ p {
 
 .border {
   align-content: flex-end;
-  max-width: 60%;
-  margin: auto;
-  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 80%;
+  margin: 50px auto auto auto;
+  padding-top: 20px;
+  padding-bottom: 8px;
   border: none;
   border-radius: 12px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   background-color: #ebf7fe;
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.75);
+  /*box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.75);*/
 }
 .border ul {
-  font-size: 20px;
+  font-size: 16px;
   display: flex;
   list-style: none;
   gap: 70px;
@@ -109,12 +113,12 @@ p {
 }
 .container {
   display: flex;
-  max-width: 60%;
+  max-width: 80%;
   margin: auto;
   border: none;
   text-align: center;
   border: none;
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.75);
+  /*box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.75);*/
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 12px;
 }
@@ -133,8 +137,8 @@ textarea {
   border: none;
   resize: none;
   align-self: left;
-  text-align: left;
-  font-size: 20px;
+  text-align: center;
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 #box2 {
@@ -161,7 +165,7 @@ button i {
 }
 
 .final-stage {
-  margin-top: 16%;
+  margin-top: 20%;
   display: flex;
   gap: 30%;
   margin-left: 30px;
@@ -185,7 +189,7 @@ button i {
   display: flex;
   margin-left: 30px;
   gap: 20px;
-  margin-top: 40%;
+  margin-top: 42%;
   color: #808080;
 }
 .final-stage-right i {
