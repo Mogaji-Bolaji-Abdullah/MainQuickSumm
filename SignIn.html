@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/MainQuickSumm/Signin.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu">
     <title>QuickSumm</title>
 </head>
 <body>
     <header>
         <div>
-            <img class="logo" src="/Frame 2.png" alt="QuickSumm logo">
+            <img class="logo" src="/MainQuickSumm/Frame 2.png" alt="QuickSumm logo">
         </div>
         <nav>
             <a href="/">Home</a>
@@ -25,5 +25,43 @@
             </a>
         </div>
     </header>
+
+
+
+    <!-- body for form section -->
+    <section>
+        <div class="login-container">
+        <div class="welcome-section">
+            <h1>Welcome Back!</h1>
+            <p>Please login to your account</p>
+        </div>
+    <div id="box">
+        <div class="google-login">
+            <img src="/MainQuickSumm/Goggle logo 4 sign up page.png" alt="Google">
+            <p>Continue with Google</p>
+        </div>
+
+        <p id="or">OR</p>
+        
+        <form class="login-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <div id="forgot">
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            <button id="sig" type="submit">Sign In</button>
+            </div>
+        </form>
+    
+        
+        <p class="register">Don't have an account?<a href="#">  Register</a></p>
+    </div>
+    </div>
+    </section>
 </body>
 </html>
