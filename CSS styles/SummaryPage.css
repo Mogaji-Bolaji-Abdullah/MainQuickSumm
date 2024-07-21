@@ -8,48 +8,50 @@ body {
   background-color: white;
 }
 /*header styling*/
-header {
+header{
   height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: white;
+  padding: 0px 120px;
 }
-.logo {
+.logo{
   width: 140px;
 }
-nav {
+nav{
   width: 290px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-nav a {
+
+nav a{
   color: black;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
 }
-nav a:hover {
-  color: #0866ff;
+nav a:hover{
+  color: #0866FF;
 }
-.sign-in {
-  background-color: #0866ff;
-  color: white;
-  font-size: 15px;
-  font-weight: 700;
-  width: 100px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-}
-.sign-in:hover {
-  background-color: white;
-  color: #0866ff;
-  border: 2px solid #0866ff;
+.sign-in{
 
-  border-radius: 10px;
+    background-color: #0866FF;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+.sign-in:hover{
+    background-color: white;
+    color: #0866FF;
+    border: 2px solid #0866FF;
+    border-radius: 10px;
 }
 
 h1 {
@@ -203,7 +205,7 @@ button i {
 }
 
 /*footer styling*/
-footer {
+footer{
   background-color: black;
   color: white;
   display: flex;
@@ -212,46 +214,54 @@ footer {
   justify-content: center;
   height: 300px;
   gap: 50px;
-}
-footer {
   margin-top: 100px;
 }
-.footer-container {
+.footer-container{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0px 120px;
 }
-.logo-container {
-  margin-bottom: -20px;
+.logo-container{
+  margin-top: -40px;
   width: 350px;
   font-size: 12px;
   line-height: 16px;
 }
-.details-container {
+.logo-container p{
+  color: white;
+  font-size: 12px;
+}
+.details-container{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 40%;
   padding-top: 10px;
 }
-.quicklink-container {
+.quicklink-container{
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
-.quicklink-container a {
+.quicklink-container a{
   text-decoration: none;
   color: white;
   font-size: 12px;
 }
-.quicklink-container a:hover {
-  color: #0866ff;
+.quicklink-container a:hover{
+  color: #0866FF;
 }
-.contactus-container h4 {
+.contactus-container h4{
   margin-bottom: 10px;
 }
-.contactus-container img {
+.contactus-container img{
   height: 30px;
   width: 30px;
+}
+.copyright{
+  font-size: 12px;
+  color: white;
 }
