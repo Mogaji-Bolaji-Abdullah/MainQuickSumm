@@ -182,6 +182,10 @@ textarea::placeholder{
   left: 30%;
   right: 30%;
 }
+.position-div:hover{
+  cursor: pointer;
+  background-color: #a19e9e2a;
+}
 .position-div p{
   font-size: 15px;
 }
@@ -215,6 +219,7 @@ textarea::placeholder{
   color: #0866FF;
   border: 2px solid #0866FF;
   background-color: white;
+  cursor: pointer;
 }
 .word-count{
   display: flex;
@@ -228,6 +233,7 @@ textarea::placeholder{
 }
 .icons:hover{
   background-color: #0867ff80;
+  cursor: pointer;
 }
 .icon-container{
   width: 400px;
