@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS styles/summarize.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>QuickSumm</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img class="logo" src="logo/Frame 2.png" alt="QuickSumm logo" />
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/Pricingpage.html">Pricing</a>
+        <a href="/AboutUs.html">About Us</a>
+        <a href="/Faq.html">FAQs</a>
+      </nav>
+      <div>
+        <a href="/SignIn.html">
+          <button class="sign-in">Sign in</button>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <h1>Summarize any text <br /><span>in a Click</span></h1>
+      <p>
+        We help you summarize any piece of text into concise, easy to digest
+        contents <br />and free yourself from the pain of reading long texts.
+      </p>
+    </section>
+
+    <!-- Sub-Hero Section -->
+    <section id="subhero">
+      <div class="hero-container">
+        <div class="first-layer">
+          <div class="output">
+            <p>Output modes:</p>
+            <div class="word-features">
+              <p>Paragraphs</p>
+              <p>Bullet Points</p>
+            </div>
+          </div>
+          <div class="summary-strength">
+            <p>Summary Strength:</p>
+            <div class="Strength">
+              <p>Short</p>
+              <p>Medium</p>
+              <p>Long</p>
+            </div>
+          </div>
+        </div>
+        <div class="second-layer">
+          <div class="paste-field">
+            <textarea name="" id="input-textarea" placeholder="Type a long text here"></textarea>
+            <div class="position-div" id="position-div">
+              <p>Click here or drag a file here</p>
+              <img class="icons" src="/icons/paste.png" alt="paper logo">
+              <p>We support .pdf, .doc, .docx <br>files upto 25 MB</p>
+            </div>
+          </div>
+          <div class="summary-field">
+            <textarea name="" id="" placeholder="Wait for the magic to happen here"></textarea>
+          </div>
+        </div>
+        <div class="third-layer">
+          <div class="words">
+            <p>Word Count: 90</p>
+            <button>Summarize</button>
+          </div>
+          <div class="word-count">
+            <div><p>Word Count: 40</p></div>
+            <div class="icon-container">
+              <img class="icons" src="/icons/draft.png" alt="">
+              <img class="icons" src="/icons/download.png" alt="">
+              <img class="icons" src="/icons/delete.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-Section-->
+    <footer>
+      <div class="footer-container">
+        <div class="logo-container">
+          <img class="logo" src="/logo/Frame 2.png" alt="QuickSumm logo">
+          <p>
+            QuickSumm can condense articles, papers or documents to the key points instantly. Our tool uses  AI at the core to locate critical information while maintaining the original content.
+          </p>
+        </div>
+        <div class="details-container">
+          <div class="quicklink-container">
+            <h4>Quick Links</h4>
+            <a href="/">Home</a>
+            <a href="/AboutUs.html">About Us</a>
+            <a href="/AboutUs.html">Our Team</a>
+            <a href="/Pricingpage.html">Pricing</a>
+            <a href="/Faq.html">FAQs</a>
+          </div>
+          <div class="contactus-container">
+            <h4>Contact Us</h4>
+            <a href=""><img src="/icons/Frame 11.png" alt="instagram icon"></a>
+            <a href=""><img src="/icons/Frame 45.png" alt="linkedin icon"></a>
+            <a href=""><img src="/icons/Frame 42.png" alt="twitter(x) icon"></a>
+            <a href=""><img src="/icons/Frame 43.png" alt="facebook icon"></a>
+            <a href=""><img src="/icons/Frame 44.png" alt="youtube icon"></a>
+  
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="copyright">
+          Copyright &copy; QuickSumm 2024, All rights reserved.
+        </p>
+      </div>
+    </footer>
+    
+    <!-- JavaScript Code to manage the display of position-div -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const textArea = document.getElementById('input-textarea');
+          const positionDiv = document.getElementById('position-div');
+
+          function togglePositionDiv() {
+              if (textArea.value.trim() === '') {
+                  positionDiv.style.display = 'flex';
+              } else {
+                  positionDiv.style.display = 'none';
+              }
+          }
+
+          textArea.addEventListener('focus', function() {
+              positionDiv.style.display = 'none';
+          });
+
+          textArea.addEventListener('blur', togglePositionDiv);
+          textArea.addEventListener('input', togglePositionDiv);
+
+          // Initial check in case the textarea already has text
+          togglePositionDiv();
+      });
+    </script>
+  </body>
+</html>
