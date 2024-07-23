@@ -15,9 +15,10 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: white;
   position: relative;
+  padding: 0px 120px;
 }
 
 .logo {
@@ -31,10 +32,11 @@ nav {
   justify-content: space-between;
 }
 
-nav a {
+nav a{
+
   color: black;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -58,6 +60,23 @@ nav a:hover {
   color: #0866FF;
   border: 2px solid #0866FF;
   border-radius: 10px;
+}
+.sign-in{
+
+    background-color: #0866FF;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+.sign-in:hover{
+    background-color: white;
+    color: #0866FF;
+    border: 2px solid #0866FF;
+    border-radius: 10px;
 }
 
 /* css for body form */

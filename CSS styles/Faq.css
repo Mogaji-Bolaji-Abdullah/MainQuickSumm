@@ -13,8 +13,9 @@ header{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: white;
+  padding: 0px 120px;
 }
 .logo{
   width: 140px;
@@ -25,35 +26,33 @@ nav{
   flex-direction: row;
   justify-content: space-between;
 }
+
 nav a{
   color: black;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
 }
 nav a:hover{
   color: #0866FF;
 }
 .sign-in{
-  background-color: #0866FF;
-  color: white;
-  font-size: 15px;
-  font-weight: 700;
-  width: 100px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
+
+    background-color: #0866FF;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
 }
 .sign-in:hover{
-  background-color: white;
-  color: #0866FF;
-  border: 2px solid #0866FF;
-
-  border-radius: 10px;
-
+    background-color: white;
+    color: #0866FF;
+    border: 2px solid #0866FF;
+    border-radius: 10px;
 }
-
-
 
 nav ul {
     list-style: none;
@@ -198,7 +197,6 @@ footer{
   color: white;
   display: flex;
   flex-direction: column;
-  text-align: left;
   align-items: center;
   justify-content: center;
   height: 300px;
@@ -208,8 +206,10 @@ footer{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  text-align: left;
+  padding: 0px 120px;
 }
 .logo-container{
   margin-top: -40px;
@@ -243,5 +243,7 @@ footer{
 .contactus-container img{
   height: 30px;
   width: 30px;
-
+}
+.copyright{
+  font-size: 12px;
 }
