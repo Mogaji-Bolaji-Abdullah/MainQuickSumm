@@ -5,7 +5,7 @@
   font-family: Ubuntu, sans-serif;
 }
 body{
-  background-color: #E8E8E8;
+  background-color: #ffff;
 }
 /*header styling*/
 header{
@@ -115,6 +115,7 @@ main {
 .faq-header p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    padding: 20px;
    
 }
 
