@@ -182,6 +182,10 @@ textarea::placeholder{
   left: 30%;
   right: 30%;
 }
+.position-div input{
+  width: 250px;
+  height: 60px;
+}
 .position-div:hover{
   cursor: pointer;
   background-color: #a19e9e2a;

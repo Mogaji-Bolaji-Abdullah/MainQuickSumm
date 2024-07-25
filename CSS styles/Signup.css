@@ -5,7 +5,7 @@
   font-family: Ubuntu, sans-serif;
 }
 body{
-  background-color: #E8E8E8;
+  background-color: white;
   padding-bottom: 50px;
 }
 /*header styling*/
@@ -14,9 +14,8 @@ header{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: white;
-  padding: 0px 120px;
 }
 .logo{
   width: 140px;
@@ -27,80 +26,66 @@ nav{
   flex-direction: row;
   justify-content: space-between;
 }
-
 nav a{
   color: black;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
 }
 nav a:hover{
   color: #0866FF;
 }
 .sign-in{
-
-    background-color: #0866FF;
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
+  background-color: #0866FF;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
 }
 .sign-in:hover{
-    background-color: white;
-    color: #0866FF;
-    border: 2px solid #0866FF;
-    border-radius: 10px;
+  background-color: white;
+  color: #0866FF;
+  border: 2px solid #0866FF;
+  border-radius: 10px;
 }
 
-.body{
+.Form{
   height: 100%;
-  margin-top: 40px;
+  width: 60%;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 16px;
+  padding-top: 5px; 
+  background-color: #FEFCFF;
 }
 
 .body h2{
-  color: black;
+  color: #000000;
   margin: 10px 0px;
 }
 
-.text{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
-  width: 300px;
-  
-}
-.text h2{
-  color: #1a1a1a;
-  font-size: 35px;
-  margin:18px 0px;
-}
-.text p {
-  color: #1a1a1a;
-  font-size: 20px;
-}
-.text h2 {
-  font-size: 30px;
-}
-
 .google{
-  background-color: #EEEDEB;
-  padding: 5px 8px;
-  border-radius: 10px;
   display: flex;
-  gap: 10px;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;
+  gap: 10px;
+  background-color: #EEEDEB;
+  border: 16px;
+  border-radius: 16px;
+  width: 100%;
+  height: 55px;
+  color: black;
 }
 .google img{
-  width: 20%;
+  width: 20px;
   height: 37px;
   object-fit: contain;
   position: relative;
@@ -108,13 +93,22 @@ nav a:hover{
   margin-bottom: 8px;
   margin-top: 8px;
 }
+.google p{
+  display: flex;
+  flex-direction: row;
+  font-size: large;
+  color: #2c2b2bcc;
+}
 
+.Form h4{
+  margin-top: 16px;
+}
 /* form*/
 .form-container {
   background-color: white;
-  border-radius: 30px;
-  padding: 20px;
-  width: 300px;
+  border-radius: 16px;
+  /* padding: 20px; */
+  justify-content: center;
 }
 
 .form-container h4{
@@ -122,10 +116,10 @@ nav a:hover{
   margin: 8px 120px;
 }
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .form-group {
   margin-bottom: 15px;
@@ -135,11 +129,12 @@ label {
   display: block;
   margin-bottom: 5px;
   font-weight: 20px;
+  margin-top: 16px;
 }
 
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 330px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -153,17 +148,13 @@ input[type="password"] {
 }
 
 button {
-  background-color: blue;
+  background-color: #0855d1;
   color: white;
-  padding: 10px 15px;
+  padding: 10px;
+  width: 330px;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
-  
-}
-
-button:hover {
-  background-color: #3FA2F6;
 }
 
 .form-links {
@@ -171,38 +162,16 @@ button:hover {
   margin-top: 10px;
 }
 
+.form-links h6{
+  color: #777676cc;
+}
+
 .form-links a {
-  color: blue;
+  color: #0866FF;
   text-decoration: none;
   margin: 0 10px;
 }
 
 .form-links a:hover {
   text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .form-container {
-      padding: 15px;
-      width: 90%;
-  }
-
-  .logo img {
-      width: 100px;
-  }
-
-  nav {
-      flex-direction: column;
-      gap: 10px;
-  }
-
-  .google {
-      flex-direction: column;
-      gap: 5px;
-  }
-
-  .form-actions button {
-      width: 100%;
-  }
 }
