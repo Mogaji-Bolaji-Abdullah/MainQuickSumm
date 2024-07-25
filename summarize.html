@@ -9,13 +9,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Ubuntu"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <title>QuickSumm</title>
   </head>
   <body>
@@ -69,13 +62,15 @@
           <div class="paste-field">
             <textarea name="" id="input-textarea" placeholder="Type a long text here"></textarea>
             <div class="position-div" id="position-div">
-              <p>Click here or drag a file here</p>
-              <img class="icons" src="/icons/paste.png" alt="paper logo">
-              <p>We support .pdf, .doc, .docx <br>files upto 25 MB</p>
+              <form id="upload-form" enctype="multipart/form-data">
+                <p>Click here or drag a file here</p>
+                <input type="file" id="file-input" accept=".txt,.pdf,.docx" />
+                <p>We support .pdf, .doc, .docx <br>files upto 25 MB</p>
+              </form>
             </div>
           </div>
           <div class="summary-field">
-            <textarea name="" id="" placeholder="Wait for the magic to happen here"></textarea>
+            <textarea name="" id="output-textarea" placeholder="Wait for the magic to happen here"></textarea>
           </div>
         </div>
         <div class="third-layer">
