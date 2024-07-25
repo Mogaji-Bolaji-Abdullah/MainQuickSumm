@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f8f8f8;
+  background-color: white;
 }
 
 /*header styling*/
@@ -82,8 +82,8 @@ nav a:hover {
 /* css for body form */
 
 .login-container {
-  height: 90%;
-  width: 30%;
+  height: 500px;
+  width: 814px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -94,27 +94,32 @@ nav a:hover {
 }
 
 .welcome-section h1 {
-  padding-left: 20px;
+  text-align: center;
 }
 
 p {
   color: #868687;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 #or {
-  padding-left: 150px;
-  font-size: 12px;
+  text-align: center;
+  color: #858088;
+  font-weight: 400;
 }
 
 .google-login {
   display: flex;
+  flex-direction: row;
   margin-top: 40px;
   gap: 10px;
   background-color: #f5f5f5;
   border-radius: 8px;
   width: 330px;
   height: 55px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .google-login:hover {
@@ -124,17 +129,19 @@ p {
 
 .google-login img {
   height: 23px;
-  margin-top: 17px;
-  margin-left: 30px;
 }
 
 .google-login p {
   font-size: 18px;
+  color: #352B3A;
+  font-weight: 400;
+  text-align: center;
+  margin: auto 0px;
 }
 
 /* form */
 .login-form {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .login-form label {
@@ -175,6 +182,7 @@ input[type="email"]:focus, input[type="password"]:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin: 20px 0px;
   text-decoration: none;
   color: #868687;
@@ -183,36 +191,43 @@ input[type="email"]:focus, input[type="password"]:focus {
 .forgot-password:hover {
   cursor: pointer;
   color: #0866FF;
+  text-decoration: underline;
 }
 
-#sig {
+button {
   background-color: #0866FF;
   color: white;
-  height: 42px;
+  padding: 10px;
+  width: 330px;
   border: none;
-  border-radius: 8px;
-}
-
-#sig:hover {
+  border-radius: 10px;
   cursor: pointer;
-  background-color: #1652b3;
+  font-size: 15px;
+  font-weight: 600;
+}
+button:hover{
+  background-color: white;
+  color: #0866FF;
+  border: 2px solid #0866FF
 }
 
 .register {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 100px;
 }
 
 .register a {
+  color: #0866FF;
   text-decoration: none;
-  padding-left: 5px;
+  margin: 0 20px;
 }
 
 .register a:hover {
   cursor: pointer;
-  color: #1652b3;
+  text-decoration: underline;
 }
 
 /* Media Queries */

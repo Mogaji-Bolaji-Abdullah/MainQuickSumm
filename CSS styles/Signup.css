@@ -53,8 +53,8 @@ nav a:hover{
 }
 
 .Form{
-  height: 100%;
-  width: 60%;
+  height: 500px;
+  width: 814px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -63,11 +63,13 @@ nav a:hover{
   padding: 16px;
   padding-top: 5px; 
   background-color: #FEFCFF;
+  border-radius: 10px;
 }
 
 .body h2{
   color: #000000;
   margin: 10px 0px;
+  padding-top: 100px;
 }
 
 .google{
@@ -77,7 +79,7 @@ nav a:hover{
   justify-content: center;
   margin-top: 40px;
   gap: 10px;
-  background-color: #EEEDEB;
+  background-color: #F5F5F5;
   border: 16px;
   border-radius: 16px;
   width: 100%;
@@ -96,8 +98,9 @@ nav a:hover{
 .google p{
   display: flex;
   flex-direction: row;
-  font-size: large;
-  color: #2c2b2bcc;
+  font-size: 18px;
+  color: #352B3A;
+  font-weight: 400;
 }
 
 .Form h4{
@@ -105,15 +108,16 @@ nav a:hover{
 }
 /* form*/
 .form-container {
-  background-color: white;
+  background-color: #FEFCFF;
   border-radius: 16px;
   /* padding: 20px; */
   justify-content: center;
 }
 
 .form-container h4{
-  align-items: center;
-  margin: 8px 120px;
+  text-align: center;
+  color: #858088;
+  font-weight: 400;
 }
 
 /* form {
@@ -135,35 +139,46 @@ label {
 input[type="email"],
 input[type="password"] {
   width: 330px;
-  padding: 8px;
-  border: 1px solid #ccc;
+  padding: 15px;
+  border: 0px solid #ccc;
+  outline: none;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #EEEDEB;
+  background-color: #F5F5F5;
 }
-
+input[type="email"]:hover, input[type="password"]:hover {
+  background-color: #d3d9de;
+}
 .form-actions {
   text-align: center;
   margin-top: 20px;
 }
 
 button {
-  background-color: #0855d1;
+  background-color: #0866FF;
   color: white;
   padding: 10px;
   width: 330px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
 }
-
+button:hover{
+  background-color: white;
+  color: #0866FF;
+  border: 2px solid #0866FF
+}
 .form-links {
   text-align: center;
   margin-top: 10px;
 }
 
 .form-links h6{
-  color: #777676cc;
+  color: #858088;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .form-links a {
@@ -174,4 +189,5 @@ button {
 
 .form-links a:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
