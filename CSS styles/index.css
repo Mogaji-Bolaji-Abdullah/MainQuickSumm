@@ -304,16 +304,12 @@ footer{
 }
 /* Medium devices (tablet, less than 992px)*/
 @media(max-width: 992px){
-  body{
-    background-color: 
-  }
+  
   .info-container p{
     font-size: 15px;
   }
   nav a{
     font-size: 14px;
-  }
-  .sign-in{
   }
   header{
     padding: 0px 80px;
@@ -321,9 +317,7 @@ footer{
 }
 /* Small devices (landscape phones, less than 768px)*/
 @media(max-width: 768px){
-  body{
-    background-color:
-  }
+ 
   div {
     height: 310px;
   }
@@ -331,10 +325,6 @@ footer{
 
 /* X-small devices (potrait phones, less than 576px) */
 @media (max-width: 576px){
-  body{
-    background-color: 
-  }
-  section {
-    flex-direction: column;
-  }
+  
+
 }
