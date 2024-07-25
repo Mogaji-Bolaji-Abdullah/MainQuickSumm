@@ -11,16 +11,16 @@
 <body>
     <header>
         <div>
-            <a href="/"><img class="logo" src="/logo/Frame 2.png" alt="QuickSumm logo"></a>
+            <img class="logo" src="/logo/Frame 2.png" alt="QuickSumm logo">
         </div>
         <nav>
             <a href="/">Home</a>
-            <a href="/Pricingpage.html">Pricing</a>
-            <a href="/AboutUs.html">About Us</a>
-            <a href="/Faq.html">FAQs</a>
+            <a href="/MainQuickSumm/PaymentPlan.html">Pricing</a>
+            <a href="/MainQuickSumm/AboutUs.html">About Us</a>
+            <a href="/MainQuickSumm/Faq.html">FAQs</a>
         </nav>
         <div>
-            <a href="/SignIn.html">
+            <a href="/MainQuickSumm/SignIn.html">
                 <button class="sign-in">Sign in</button>
             </a>
         </div>
@@ -33,7 +33,7 @@
             <p>Find answers to common questions about QuickSumm.</p>
             <div class="search-box-container">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" placeholder="Search for a question..." class="search-box">
+                <input type="text" placeholder="Search for a question..." class="search-box" id="searchBox">
             </div>
         </div>
         <div class="faq-content">
@@ -49,7 +49,7 @@
             </div>
             <div class="faq-item">
                 <button class="faq-question">
-                    Who can benefift from QuickSumm?
+                    Who can benefit from QuickSumm?
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="faq-answer">
@@ -207,45 +207,45 @@
             </div>
             
         </div>    
-        
-    <!--Footer-Section-->
     <footer>
         <div class="footer-container">
-        <div class="logo-container">
-            <img class="logo" src="/logo/Frame 2.png" alt="QuickSumm logo">
-            <p>
-            QuickSumm can condense articles, papers or documents to the key points instantly. Our tool uses  AI at the core to locate critical information while maintaining the original content.
-            </p>
-        </div>
-        <div class="details-container">
-            <div class="quicklink-container">
-            <h4>Quick Links</h4>
-            <a href="/">Home</a>
-            <a href="/AboutUs.html">About Us</a>
-            <a href="/AboutUs.html">Our Team</a>
-            <a href="/Pricingpage.html">Pricing</a>
-            <a href="/Faq.html">FAQs</a>
+            <div class="logo-container">
+                <img class="logo" src="/logo/Frame 2.png" alt="QuickSumm logo">
+                <p>
+                    QuickSumm can condense articles, papers or documents to the key points instantly. Our tool uses  AI at the core to locate critical information while maintaining the original content.
+                </p>
             </div>
-            <div class="contactus-container">
-            <h4>Contact Us</h4>
-            <a href=""><img src="/icons/Frame 11.png" alt="instagram icon"></a>
-            <a href=""><img src="/icons/Frame 45.png" alt="linkedin icon"></a>
-            <a href=""><img src="/icons/Frame 42.png" alt="twitter(x) icon"></a>
-            <a href=""><img src="/icons/Frame 43.png" alt="facebook icon"></a>
-            <a href=""><img src="/icons/Frame 44.png" alt="youtube icon"></a>
-    
+            <div class="details-container">
+                <div class="quicklink-container">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/AboutUs.html">About Us</a>
+                    <a href="/AboutUs.html">Our Team</a>
+                    <a href="/PaymentPlan.html">Pricing</a>
+                    <a href="/Faq.html">FAQs</a>
+                </div>
+                <div class="contactus-container">
+                    <h4>Contact Us</h4>
+                        <a href="https://www.instagram.com"><img src="/icons/Frame 11.png" alt="instagram icon"></a>
+                        <a href="https://www.linkedin.com"><img src="/icons/Frame 45.png" alt="linkedin icon"></a>
+                        <a href="https://www.x.com"><img src="/icons/Frame 42.png" alt="twitter(x) icon"></a>
+                        <a href="https://www.facebook.com"><img src="/icons/Frame 43.png" alt="facebook icon"></a>
+                        <a href="https://www.youtube.com"><img src="/icons/Frame 44.png" alt="youtube icon"></a>
+                </div>
             </div>
-        </div>
         </div>
         <div>
-        <p class="copyright">
-            Copyright &copy; QuickSumm 2024, All rights reserved.
-        </p>
+            <p class="copyright">
+                Copyright &copy; QuickSumm 2024, All rights reserved.
+            </p>
         </div>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const questions = document.querySelectorAll('.faq-question');
+            const searchBox = document.getElementById('searchBox');
+
+            // Accordion functionality
             questions.forEach(question => {
                 question.addEventListener('click', () => {
                     const answer = question.nextElementSibling;
@@ -264,6 +264,19 @@
                         answer.style.display = 'block';
                         question.querySelector('i').classList.remove('fa-chevron-down');
                         question.querySelector('i').classList.add('fa-chevron-up');
+                    }
+                });
+            });
+
+            // Search functionality
+            searchBox.addEventListener('input', () => {
+                const filter = searchBox.value.toLowerCase();
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    const questionText = item.querySelector('.faq-question').innerText.toLowerCase();
+                    if (questionText.includes(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
                     }
                 });
             });

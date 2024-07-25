@@ -294,4 +294,47 @@ footer{
 }
 
 /*Responsiveness*/
- 
+/* X-large devices (large desktops, less than 1400px*/
+@media(max-width: 1400px){
+
+}
+/* Large devices (desktops, less than 1200px) */
+@media(max-width: 1200px){
+
+}
+/* Medium devices (tablet, less than 992px)*/
+@media(max-width: 992px){
+  body{
+    background-color: 
+  }
+  .info-container p{
+    font-size: 15px;
+  }
+  nav a{
+    font-size: 14px;
+  }
+  .sign-in{
+  }
+  header{
+    padding: 0px 80px;
+  }
+}
+/* Small devices (landscape phones, less than 768px)*/
+@media(max-width: 768px){
+  body{
+    background-color:
+  }
+  div {
+    height: 310px;
+  }
+}
+
+/* X-small devices (potrait phones, less than 576px) */
+@media (max-width: 576px){
+  body{
+    background-color: 
+  }
+  section {
+    flex-direction: column;
+  }
+}
