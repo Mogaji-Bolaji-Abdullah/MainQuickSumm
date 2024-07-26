@@ -242,7 +242,7 @@ textarea::placeholder{
   width: 400px;
   display: flex;
   flex-direction: row;
-justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 /*footer styling*/
 footer{
@@ -298,4 +298,354 @@ footer{
 }
 .copyright{
   font-size: 12px;
+}
+
+/*Responsiveness*/
+/* X-large devices (large desktops, less than 1400px*/
+@media(max-width: 1400px){
+
+}
+/* Large devices (desktops, less than 1200px) */
+@media(max-width: 1200px){
+  .position-div{
+    top: 30%;
+    left: 20%;
+    right: 20%;
+  }
+}
+/* Medium devices (tablet, less than 992px)*/
+@media(max-width: 992px){
+  nav a{
+    font-size: 14px;
+  }
+  header{
+    padding: 0px 80px;
+  }
+  h1 {
+    font-size: 30px;
+    padding-top: 40px;
+  }
+  #hero p {
+    font-size: 15px;
+  }
+  .hero-container{
+    margin-inline: 80px;
+  }
+  .first-layer{
+    height: 50px;
+    padding: 5px;
+    gap: 0px;
+  }
+  .output{
+    width: 50%;
+    gap: px;
+    padding-left: 10px;
+  }
+  .word-features{
+    width: 150px;
+  }
+  .summary-strength{
+    width: 50%;
+    gap: px;
+  }
+  .output p, .summary-strength p{
+    font-size: 13px;
+  }
+  .Strength{
+    width: 150px;
+  }
+  .word-features p, .Strength p{
+    font-size: 11px;
+  }
+  textarea::placeholder{
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  .position-div{
+    padding: 10px;
+    gap: 10px;
+    width: 200px;
+    top: 30%;
+    left: 25%;
+    right: 25%;
+  }
+  .position-div p{
+    font-size: 13px;
+  }
+  .third-layer{
+    gap: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .words button{
+    margin-right: 20px;
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+  .icons{
+    height: 25px;
+    width: 25px;
+  }
+  .icon-container{
+    width: 300px;
+  }
+  .footer-container{
+    padding: 0px 80px;
+  }
+  .logo-container{
+    margin-top: -40px;
+    width: 300px;
+    font-size: 11px;
+  }
+  .quicklink-container a{
+    font-size: 11px;
+  }
+  .contactus-container img{
+    height: 20px;
+    width: 20px;
+  }
+  .copyright{
+    font-size: 11px;
+  }
+  
+}
+/* Small devices (landscape phones, less than 768px)*/
+@media(max-width: 768px){
+  .logo{
+    width: 100px;
+  }
+  nav{
+    width: 250px;
+  }
+  nav a{
+    font-size: 11px;
+  }
+  header{
+    padding: 0px 50px;
+  }
+  .sign-in{
+    font-size: 11px;
+    width: 60px;
+    height: 30px;
+  }
+  #hero{
+    padding: 0px 50px;
+  }
+  h1 {
+    font-size: 25px;
+    padding-top: 30px;
+  }
+  #hero p {
+    font-size: 13px;
+  }
+  .hero-container{
+    margin-inline: 50px;
+  }
+  .first-layer{
+    height: 45px;
+    padding: 5px;
+    gap: 0px;
+  }
+  .output{
+    width: 50%;
+    gap: 5px;
+    padding-left: 10px;
+  }
+  .word-features{
+    width: 120px;
+  }
+  .summary-strength{
+    width: 50%;
+    gap: 5px;
+  }
+  .output p, .summary-strength p{
+    font-size: 11px;
+  }
+  .Strength{
+    width: 120px;
+  }
+  .word-features p, .Strength p{
+    font-size: 9px;
+  }
+  textarea::placeholder{
+    padding-top: 20px;
+    font-size: 11px;
+  }
+  .position-div{
+    padding: 10px;
+    gap: 10px;
+    width: 150px;
+    top: 30%;
+    left: 25%;
+    right: 25%;
+  }
+  .position-div p{
+    font-size: 11px;
+  }
+  .third-layer{
+    gap: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
+    font-size: 11px;
+  }
+  .words button{
+    margin-right: 20px;
+    padding: 6px 15px;
+    font-size: 11px;
+  }
+  .icons{
+    height: 20px;
+    width: 20px;
+  }
+  .icon-container{
+    width: 250px;
+  }
+  footer{
+    height: 250px;
+  }
+  .footer-container{
+    padding: 0px 50px;
+  }
+  .logo-container{
+    margin-top: 0px;
+    width: 200px;
+    font-size: 10px;
+  }
+  .quicklink-container a{
+    font-size: 10px;
+  }
+  .details-container h4{
+    font-size: 11px;
+  }
+  .contactus-container img{
+    height: 16px;
+    width: 16px;
+  }
+  .copyright{
+    font-size: 10px;
+  }
+}
+
+/* X-small devices (potrait phones, less than 576px) */
+@media (max-width: 576px){
+  
+  .logo{
+    width: 90px;
+  }
+  nav{
+    width: 150px;
+  }
+  nav a{
+    font-size: 9px;
+  }
+  header{
+    padding: 0px 15px;
+  }
+  .sign-in{
+    font-size: 9px;
+    width: 45px;
+    height: 23px;
+  }
+  #hero{
+    padding: 0px 15px;
+  }
+  h1 {
+    font-size: 20px;
+    padding-top: 30px;
+  }
+  #hero p {
+    font-size: 11px;
+  }
+  .hero-container{
+    margin-inline: 15px;
+  }
+  .first-layer{
+    height: 45px;
+    padding: 5px;
+    gap: 0px;
+  }
+  .output{
+    width: 50%;
+    gap: 0px;
+    padding-left: 7px;
+  }
+  .word-features{
+    width: 100px;
+  }
+  .summary-strength{
+    width: 50%;
+    gap: 0px;
+  }
+  .output p, .summary-strength p{
+    font-size: 8px;
+  }
+  .Strength{
+    width: 100px;
+  }
+  .word-features p, .Strength p{
+    font-size: 7px;
+  }
+  textarea::placeholder{
+    padding-top: 20px;
+    font-size: 8px;
+  }
+  .position-div{
+    padding: 5px;
+    gap: 5px;
+    width: 120px;
+    top: 30%;
+    left: 15%;
+    right: 15%;
+  }
+  .position-div p{
+    font-size: 8px;
+  }
+  #file-input{
+    font-size: 8px;
+    width: 60px;
+  }
+  .third-layer{
+    gap: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
+    font-size: 8px;
+  }
+  .words button{
+    margin-right: 10px;
+    padding: 5px 8px;
+    font-size: 8px;
+  }
+  .icons{
+    height: 12px;
+    width: 12px;
+  }
+  .icon-container{
+    width: 250px;
+  }
+  footer{
+    height: 250px;
+  }
+  .footer-container{
+    padding: 0px 15px;
+    justify-content: space-evenly;
+  }
+  .logo-container{
+    margin-top: 0px;
+    width: 150px;
+    font-size: 8px;
+  }
+  .quicklink-container a{
+    font-size: 8px;
+  }
+  .details-container h4{
+    font-size: 8px;
+  }
+  .contactus-container img{
+    height: 11px;
+    width: 11px;
+  }
+  .copyright{
+    font-size: 8px;
+  }
 }

@@ -179,3 +179,134 @@ footer{
 .copyright{
   font-size: 12px;
 }
+
+/*Responsiveness*/
+/* X-large devices (large desktops, less than 1400px*/
+@media(max-width: 1400px){
+
+}
+/* Large devices (desktops, less than 1200px) */
+@media(max-width: 1200px){
+
+}
+/* Medium devices (tablet, less than 992px)*/
+@media(max-width: 992px){
+  nav a{
+    font-size: 14px;
+  }
+  header{
+    padding: 0px 80px;
+  } 
+  
+  .footer-container{
+    padding: 0px 80px;
+  }
+  .logo-container{
+    margin-top: -40px;
+    width: 300px;
+    font-size: 11px;
+  }
+  .quicklink-container a{
+    font-size: 11px;
+  }
+  .contactus-container img{
+    height: 20px;
+    width: 20px;
+  }
+  .copyright{
+    font-size: 11px;
+  }
+  
+}
+/* Small devices (landscape phones, less than 768px)*/
+@media(max-width: 768px){
+  .logo{
+    width: 100px;
+  }
+  nav{
+    width: 250px;
+  }
+  nav a{
+    font-size: 11px;
+  }
+  header{
+    padding: 0px 50px;
+  }
+  .sign-in{
+    font-size: 11px;
+    width: 60px;
+    height: 30px;
+  }
+  footer{
+    height: 250px;
+  }
+  .footer-container{
+    padding: 0px 50px;
+  }
+  .logo-container{
+    margin-top: 0px;
+    width: 200px;
+    font-size: 10px;
+  }
+  .quicklink-container a{
+    font-size: 10px;
+  }
+  .details-container h4{
+    font-size: 11px;
+  }
+  .contactus-container img{
+    height: 16px;
+    width: 16px;
+  }
+  .copyright{
+    font-size: 10px;
+  }
+}
+
+/* X-small devices (potrait phones, less than 576px) */
+@media (max-width: 576px){
+  
+  .logo{
+    width: 90px;
+  }
+  nav{
+    width: 150px;
+  }
+  nav a{
+    font-size: 9px;
+  }
+  header{
+    padding: 0px 15px;
+  }
+  .sign-in{
+    font-size: 9px;
+    width: 45px;
+    height: 23px;
+
+  }
+  footer{
+    height: 250px;
+  }
+  .footer-container{
+    padding: 0px 15px;
+    justify-content: space-evenly;
+  }
+  .logo-container{
+    margin-top: 0px;
+    width: 150px;
+    font-size: 8px;
+  }
+  .quicklink-container a{
+    font-size: 8px;
+  }
+  .details-container h4{
+    font-size: 8px;
+  }
+  .contactus-container img{
+    height: 11px;
+    width: 11px;
+  }
+  .copyright{
+    font-size: 8px;
+  }
+}

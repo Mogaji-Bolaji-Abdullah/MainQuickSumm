@@ -191,3 +191,66 @@ button:hover{
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* X-large devices (large desktops, less than 1400px*/
+@media(max-width: 1400px){
+
+}
+/* Large devices (desktops, less than 1200px) */
+@media(max-width: 1200px){
+
+}
+/* Medium devices (tablet, less than 992px)*/
+@media(max-width: 992px){
+  nav a{
+    font-size: 14px;
+  }
+  header{
+    padding: 0px 80px;
+  } 
+  
+  
+}
+/* Small devices (landscape phones, less than 768px)*/
+@media(max-width: 768px){
+  .logo{
+    width: 100px;
+  }
+  nav{
+    width: 250px;
+  }
+  nav a{
+    font-size: 11px;
+  }
+  header{
+    padding: 0px 50px;
+  }
+  .sign-in{
+    font-size: 11px;
+    width: 60px;
+    height: 30px;
+  }
+}
+
+/* X-small devices (potrait phones, less than 576px) */
+@media (max-width: 576px){
+  
+  .logo{
+    width: 90px;
+  }
+  nav{
+    width: 150px;
+  }
+  nav a{
+    font-size: 9px;
+  }
+  header{
+    padding: 0px 15px;
+  }
+  .sign-in{
+    font-size: 9px;
+    width: 45px;
+    height: 23px;
+  }
+  
+}
