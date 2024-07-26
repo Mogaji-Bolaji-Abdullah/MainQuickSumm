@@ -453,7 +453,7 @@ footer{
     padding-top: 60px;
     gap: 65px;
   }
-  .first-container, .second-container, .fourth-container{
+  .first-container, .second-container,.third-container, .fourth-container{
     padding: 0px 50px;
   }
   .image2{
@@ -580,7 +580,7 @@ footer{
     height: 50px;
     width: 150px;
   }
-  .first-container, .second-container, .fourth-container{
+  .first-container, .second-container, .fourth-container, .third-container{
     padding: 0px 15px;
     justify-content: space-evenly;
   }
