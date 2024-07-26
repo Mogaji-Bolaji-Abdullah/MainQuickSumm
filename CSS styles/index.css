@@ -526,8 +526,9 @@ footer{
   }
   .sign-in{
     font-size: 9px;
-    width: 40px;
+    width: 45px;
     height: 23px;
+
   }
   #hero{
     height: 300px;
@@ -539,12 +540,13 @@ footer{
     font-size: 11px;
   }
   #hero button{
-    width: 150px;
+    width: 160px;
     height: 30px;
     font-size: 11px;
   }
   #assistance{
     height: 300px;
+    justify-content: space-evenly;
   }
   .assitance-container h3{
     font-size: 18px;
@@ -576,10 +578,11 @@ footer{
     font-size: 11px;
     padding: 0px;
     height: 50px;
-    width: 0%;
+    width: 200px;
   }
   .first-container, .second-container, .fourth-container{
     padding: 0px 15px;
+    justify-content: space-evenly;
   }
   .image2{
     height: 100px;
@@ -613,6 +616,7 @@ footer{
   }
   .footer-container{
     padding: 0px 15px;
+    justify-content: space-evenly;
   }
   .logo-container{
     margin-top: 0px;
