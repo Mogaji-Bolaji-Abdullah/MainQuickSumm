@@ -304,27 +304,335 @@ footer{
 }
 /* Medium devices (tablet, less than 992px)*/
 @media(max-width: 992px){
-  
-  .info-container p{
-    font-size: 15px;
-  }
   nav a{
     font-size: 14px;
   }
-  header{
+  header, #hero, #assistance, #platform{
     padding: 0px 80px;
   }
+  #hero h1{
+    font-size: 45px;
+  }
+  #hero p{
+    font-size: 15px;
+  }
+  .assitance-container h3{
+    font-size: 25px;
+  }
+  .assitance-container p{
+    font-size: 15px;
+  }
+  .image{
+    width: 150px;
+  }
+  #platform h1{
+    font-size: 25px;
+  }
+  #platform p{
+    font-size: 15px;
+  }
+  #features div h2{
+    font-size: 25px;
+    padding-inline: 80px;
+  }
+  
+  #features table td{
+    font-size: 15px;
+  }
+  .first-container, .second-container, .fourth-container{
+    padding: 0px 80px;
+  }
+  .image2{
+    height: 200px;
+    width: 200px;
+  }
+  .info-container{
+    width: 350px;
+  }
+  .info-container p{
+    font-size: 15px;
+  }
+  .info-container h3{
+    font-size: 25px;
+  }
+  .third-container h2{
+    font-size: 25px;
+  }
+  .third-container p{
+    font-size: 15px;
+  }
+  .third-container img{
+    padding: 0px 80px;
+  }
+  .footer-container{
+    padding: 0px 80px;
+  }
+  .logo-container{
+    margin-top: -40px;
+    width: 300px;
+    font-size: 11px;
+  }
+  .quicklink-container a{
+    font-size: 11px;
+  }
+  .contactus-container img{
+    height: 20px;
+    width: 20px;
+  }
+  .copyright{
+    font-size: 11px;
+  }
+  
 }
 /* Small devices (landscape phones, less than 768px)*/
 @media(max-width: 768px){
- 
-  div {
-    height: 310px;
+  .logo{
+    width: 100px;
+  }
+  nav{
+    width: 250px;
+  }
+  nav a{
+    font-size: 11px;
+  }
+  header, #hero, #assistance, #platform{
+    padding: 0px 50px;
+  }
+  .sign-in{
+    font-size: 11px;
+    width: 60px;
+    height: 30px;
+  }
+  #hero{
+    height: 400px;
+  }
+  #hero h1{
+    font-size: 40px;
+  }
+  #hero p{
+    font-size: 13px;
+  }
+  #hero button{
+    width: 180px;
+    height: 40px;
+    font-size: 13px;
+  }
+  #assistance{
+    height: 300px;
+  }
+  .assitance-container h3{
+    font-size: 23px;
+  }
+  .assitance-container p{
+    font-size: 13px;
+  }
+  .image{
+    width: 150px;
+  }
+  #platform{
+    height: 200px;
+    gap: 0px;
+  }
+  #platform h1{
+    font-size: 23px;
+  }
+  #platform p{
+    font-size: 13px;
+  }
+  #features div h2{
+    font-size: 23px;
+    padding-inline: 50px;
+  }
+  
+  #features table td{
+    font-size: 13px;
+    padding: 0px;
+    height: 50px;
+  }
+  #sub-features{
+    padding-top: 60px;
+    gap: 65px;
+  }
+  .first-container, .second-container, .fourth-container{
+    padding: 0px 50px;
+  }
+  .image2{
+    height: 150px;
+    width: 150px;
+  }
+  .info-container{
+    width: 300px;
+  }
+  .info-container p{
+    font-size: 13px;
+  }
+  .info-container h3{
+    font-size: 23px;
+  }
+  .third-container h2{
+    font-size: 23px;
+  }
+  .third-container p{
+    font-size: 13px;
+  }
+  .third-container img{
+    padding: 0px 50px;
+  }
+  .fourth-container button{
+    width: 130px;
+    height: 40px;
+    font-size: 13px;
+  }
+  footer{
+    height: 250px;
+  }
+  .footer-container{
+    padding: 0px 50px;
+  }
+  .logo-container{
+    margin-top: 0px;
+    width: 200px;
+    font-size: 10px;
+  }
+  .quicklink-container a{
+    font-size: 10px;
+  }
+  .details-container h4{
+    font-size: 11px;
+  }
+  .contactus-container img{
+    height: 16px;
+    width: 16px;
+  }
+  .copyright{
+    font-size: 10px;
   }
 }
 
 /* X-small devices (potrait phones, less than 576px) */
 @media (max-width: 576px){
   
-
+  body{
+    background-color: red;
+  }
+  .logo{
+    width: 90px;
+  }
+  nav{
+    width: 150px;
+  }
+  nav a{
+    font-size: 9px;
+  }
+  header, #hero, #assistance, #platform{
+    padding: 0px 15px;
+  }
+  .sign-in{
+    font-size: 9px;
+    width: 40px;
+    height: 23px;
+  }
+  #hero{
+    height: 300px;
+  }
+  #hero h1{
+    font-size: 25px;
+  }
+  #hero p{
+    font-size: 11px;
+  }
+  #hero button{
+    width: 150px;
+    height: 30px;
+    font-size: 11px;
+  }
+  #assistance{
+    height: 300px;
+  }
+  .assitance-container h3{
+    font-size: 18px;
+  }
+  .assitance-container p{
+    font-size: 11px;
+  }
+  .image{
+    width: 100px;
+  }
+  #platform{
+    height: 200px;
+    gap: 0px;
+  }
+  #platform h1{
+    font-size: 18px;
+  }
+  #platform p{
+    font-size: 11px;
+  }
+  #features div h2{
+    font-size: 18px;
+    padding-inline: 15px;
+  }
+  #features table{
+    padding: 0px 15px;
+  }
+  #features table td{
+    font-size: 11px;
+    padding: 0px;
+    height: 50px;
+    width: 0%;
+  }
+  .first-container, .second-container, .fourth-container{
+    padding: 0px 15px;
+  }
+  .image2{
+    height: 100px;
+    width: 100px;
+  }
+  .info-container{
+    width: 200px;
+  }
+  .info-container p{
+    font-size: 8px;
+  }
+  .info-container h3{
+    font-size: 11px;
+  }
+  .third-container h2{
+    font-size: 11px;
+  }
+  .third-container p{
+    font-size: 8px;
+  }
+  .third-container img{
+    padding: 0px 15px;
+  }
+  .fourth-container button{
+    width: 100px;
+    height: 40px;
+    font-size: 11px;
+  }
+  footer{
+    height: 250px;
+  }
+  .footer-container{
+    padding: 0px 15px;
+  }
+  .logo-container{
+    margin-top: 0px;
+    width: 150px;
+    font-size: 8px;
+  }
+  .quicklink-container a{
+    font-size: 8px;
+  }
+  .details-container h4{
+    font-size: 8px;
+  }
+  .contactus-container img{
+    height: 11px;
+    width: 11px;
+  }
+  .copyright{
+    font-size: 8px;
+  }
 }
