@@ -605,6 +605,7 @@ footer{
   #file-input{
     font-size: 8px;
     width: 60px;
+    margin: 0 auto;
   }
   .third-layer{
     gap: 10px;
