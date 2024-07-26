@@ -512,9 +512,6 @@ footer{
 /* X-small devices (potrait phones, less than 576px) */
 @media (max-width: 576px){
   
-  body{
-    background-color: red;
-  }
   .logo{
     width: 90px;
   }
