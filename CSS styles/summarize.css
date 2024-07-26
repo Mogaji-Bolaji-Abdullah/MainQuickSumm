@@ -173,6 +173,7 @@ textarea::placeholder{
   gap: 10px;
   align-items: center;
   text-align: center;
+  justify-content: center;
   color: #868687;
   background-color: #F8F8F8;
   border-radius: 10px;
