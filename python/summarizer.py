@@ -1,38 +1,35 @@
-import requests
-import openai
-import pyperclip
-from fpdf import FPDF
-from docx import Document
-import fitz  # PyMuPDF for PDF handling
+import google.generativeai as genai
+import sys
 
-openai.api_key = 'sk-proj-3EE2GIh130QiPPkz2CE9T3BlbkFJSNxXMQuVqqt6NWOjRHku'
+# Configure the API key
+genai.configure(api_key='AIzaSyDd8V2D0lV2HECOD8tnV7Ct6LTmM6S1_G0')
+
+# Initialize the model
+model = genai.GenerativeModel('gemini-1.5-pro')  # Updated to a more capable model
+
+try:
+    from fpdf import FPDF
+    from docx import Document
+    import pyperclip
+except ImportError as e:
+    print(f"Error: {e}. Please install the required libraries.")
+    sys.exit(1)
 
 def get_summary(text, summary_length):
     max_tokens_map = {
         'short': 50,
         'medium': 150,
-        'large': 300
+        'long': 300
     }
     
-    max_tokens = max_tokens_map.get(summary_length, 150)  # Default to 'medium' if invalid input
+    max_tokens = max_tokens_map.get(summary_length, 150)
     
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": f"Summarize the following text:\n\n{text}\n\nSummary:"}
-            ],
-            max_tokens=max_tokens,
-            n=1,
-            stop=None,
-            temperature=0.5
+        response = model.generate_content(
+            f"Summarize the following text in approximately {max_tokens} words:\n\n{text}"
         )
-        summary = response['choices'][0]['message']['content'].strip()
+        summary = response.text.strip()
         return summary
-    except openai.error.RateLimitError:
-        print("Rate limit exceeded. Please check your quota and billing details.")
-        return None
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
@@ -41,67 +38,50 @@ def count_words(text):
     return len(text.split())
 
 def save_as_txt(filename, text):
-    with open(filename, 'w') as file:
-        file.write(text)
+    try:
+        with open(filename, 'w', encoding='utf-8') as file:  # Added encoding
+            file.write(text)
+        print(f"Summary saved as {filename}")
+    except IOError as e:
+        print(f"Error saving file: {e}")
 
 def save_as_pdf(filename, text):
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_auto_page_break(auto=True, margin=15)
-    pdf.set_font("Arial", size=12)
-    pdf.multi_cell(0, 10, text)
-    pdf.output(filename)
+    try:
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_auto_page_break(auto=True, margin=15)
+        pdf.set_font("Arial", size=12)
+        pdf.multi_cell(0, 10, text)
+        pdf.output(filename)
+        print(f"Summary saved as {filename}")
+    except Exception as e:
+        print(f"Error saving PDF: {e}")
 
 def save_as_doc(filename, text):
-    doc = Document()
-    doc.add_paragraph(text)
-    doc.save(filename)
+    try:
+        doc = Document()
+        doc.add_paragraph(text)
+        doc.save(filename)
+        print(f"Summary saved as {filename}")
+    except Exception as e:
+        print(f"Error saving DOC: {e}")
 
 def copy_to_clipboard(text):
-    pyperclip.copy(text)
-
-def extract_text_from_pdf(pdf_path):
-    text = ""
     try:
-        pdf_document = fitz.open(pdf_path)
-        for page_num in range(len(pdf_document)):
-            page = pdf_document.load_page(page_num)
-            text += page.get_text()
-        return text
-    except Exception as e:
-        print(f"An error occurred while extracting text from PDF: {e}")
-        return None
+        pyperclip.copy(text)
+        print("Summary copied to clipboard.")
+    except pyperclip.PyperclipException as e:
+        print(f"Error copying to clipboard: {e}")
 
-# Prompt user for input method
-input_method = input("Do you want to paste text or upload a file? (paste/upload): ").strip().lower()
+def main():
+    # Prompt user for input text
+    input_text = input("Enter the text you want to summarize: ").strip()
 
-if input_method == 'paste':
-    input_text = input("Enter the text you want to summarize: ")
-elif input_method == 'upload':
-    file_type = input("Enter the file type (txt or pdf): ").strip().lower()
-    file_path = input("Enter the file path: ")
-    
-    if file_type == 'txt':
-        try:
-            with open(file_path, 'r') as file:
-                input_text = file.read()
-        except Exception as e:
-            print(f"An error occurred while reading the file: {e}")
-            input_text = ""
-    elif file_type == 'pdf':
-        input_text = extract_text_from_pdf(file_path)
-        if input_text is None:
-            input_text = ""
-    else:
-        print("Unsupported file type.")
-        input_text = ""
-else:
-    print("Invalid input method.")
-    input_text = ""
-
-if input_text:
     # Prompt user for summary length
-    summary_length = input("Enter summary length (short, medium, large): ").strip().lower()
+    valid_lengths = ['short', 'medium', 'long']
+    summary_length = input("Enter summary length (short, medium, long): ").strip().lower()
+    while summary_length not in valid_lengths:
+        summary_length = input("Invalid input. Please enter summary length (short, medium, long): ").strip().lower()
 
     # Get summary
     summary = get_summary(input_text, summary_length)
@@ -125,15 +105,14 @@ if input_text:
                 save_as_pdf(filename, summary)
             elif output_format == 'doc':
                 save_as_doc(filename, summary)
-            print(f"Summary saved as {filename}")
         
         elif output_format == 'clipboard':
             copy_to_clipboard(summary)
-            print("Summary copied to clipboard.")
         
         else:
             print("Invalid format selected.")
     else:
-        print("Could not retrieve summary due to rate limit.")
-else:
-    print("No text available for summarization.")
+        print("Could not retrieve summary.")
+
+if __name__ == "__main__":
+    main()
