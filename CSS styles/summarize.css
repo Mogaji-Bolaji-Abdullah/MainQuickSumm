@@ -191,7 +191,8 @@ textarea::placeholder{
   font-size: 15px;
 }
 #file-input{
-  width: 87px;
+  font-size: 13px;
+  width: 85px;
 }
 .third-layer{
   display: flex;
