@@ -1,118 +1,168 @@
-import google.generativeai as genai
 import sys
+import io
+import os
+import google.generativeai as genai
+from dotenv import load_dotenv
+from docx import Document
+import pyperclip
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
+from PyPDF2 import PdfReader
 
-# Configure the API key
-genai.configure(api_key='AIzaSyDd8V2D0lV2HECOD8tnV7Ct6LTmM6S1_G0')
+# Redirect stderr to null to suppress warnings
+sys.stderr = open(os.devnull, 'w')
 
-# Initialize the model
-model = genai.GenerativeModel('gemini-1.5-pro')  # Updated to a more capable model
+# Access your API key as an environment variable.
+load_dotenv()
+GOOGLE_API_KEY = os.getenv("API_KEY")
+genai.configure(api_key=GOOGLE_API_KEY)
 
-try:
-    from fpdf import FPDF
-    from docx import Document
-    import pyperclip
-except ImportError as e:
-    print(f"Error: {e}. Please install the required libraries.")
-    sys.exit(1)
+# Choose a model that's appropriate for your use case.
+model = genai.GenerativeModel(
+    'gemini-1.5-flash',
+    generation_config=genai.GenerationConfig(max_output_tokens=2000, temperature=0.9,)) #TEMPERATURE controls the randomness of the output. Use higher values for more creative responses, and lower values for more deterministic responses. Values can range from [0.0, 2.0]. also MaxOutputTokens sets the maximum number of tokens to include in a candidate.
 
-def get_summary(text, summary_length):
-    max_tokens_map = {
-        'short': 50,
-        'medium': 150,
-        'long': 300
-    }
-    
-    max_tokens = max_tokens_map.get(summary_length, 150)
-    
+def get_input():
+    choice = input("Do you want to (1) Enter text manually or (2) Upload a file? (Enter 1 or 2): ")
+    if choice == '1':
+        print("\n" + "=" * 50)
+        print("Enter the text you want to summarize below:")
+        print("(Type your text and press Enter when finished)")
+        print("-" * 50)
+        text = input()
+        # text = sys.stdin.read()
+        print("=" * 50)
+        return text
+    elif choice == '2':
+        filepath = input("Enter the file path: ")
+        return read_file(filepath)
+    else:
+        print("Invalid choice. Please enter 1 or 2.")
+        return get_input()
+
+def read_file(filepath):
+    if filepath.endswith('.txt'):
+        with open(filepath, 'r') as file:
+            return file.read()
+    elif filepath.endswith('.docx'):
+        return read_docx(filepath)
+    elif filepath.endswith('.pdf'):
+        return read_pdf(filepath)
+    else:
+        print("Unsupported file type. Please upload a TXT, DOCX, or PDF file.")
+        return get_input()
+
+def read_docx(filepath):
+    doc = Document(filepath)
+    full_text = []
+    for para in doc.paragraphs:
+        full_text.append(para.text)
+    return '\n'.join(full_text)
+
+def read_pdf(filepath):
+    reader = PdfReader(filepath)
+    full_text = []
+    for page in reader.pages:
+        full_text.append(page.extract_text())
+    return '\n'.join(full_text)
+
+def summarize_text(text, length):
     try:
-        response = model.generate_content(
-            f"Summarize the following text in approximately {max_tokens} words:\n\n{text}"
-        )
-        summary = response.text.strip()
-        return summary
+        prompt = f"Summarize the following text in a {length} format: {text}"
+        response = model.generate_content(prompt)
+        return response.text
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"Error in summarization: {e}")
         return None
 
-def count_words(text):
+def word_count(text):
     return len(text.split())
 
-def save_as_txt(filename, text):
-    try:
-        with open(filename, 'w', encoding='utf-8') as file:  # Added encoding
-            file.write(text)
-        print(f"Summary saved as {filename}")
-    except IOError as e:
-        print(f"Error saving file: {e}")
+def save_as_pdf(text, filename):
+    doc = SimpleDocTemplate(filename, pagesize=letter)
+    styles = getSampleStyleSheet()
+    content = []
+    paragraphs = text.split('\n')
+    for paragraph in paragraphs:
+        content.append(Paragraph(paragraph, styles['Normal']))
+    doc.build(content)
 
-def save_as_pdf(filename, text):
-    try:
-        pdf = FPDF()
-        pdf.add_page()
-        pdf.set_auto_page_break(auto=True, margin=15)
-        pdf.set_font("Arial", size=12)
-        pdf.multi_cell(0, 10, text)
-        pdf.output(filename)
-        print(f"Summary saved as {filename}")
-    except Exception as e:
-        print(f"Error saving PDF: {e}")
+def save_as_docx(text, filename):
+    doc = Document()
+    for paragraph in text.split('\n'):
+        doc.add_paragraph(paragraph)
+    doc.save(filename)
 
-def save_as_doc(filename, text):
-    try:
-        doc = Document()
-        doc.add_paragraph(text)
-        doc.save(filename)
-        print(f"Summary saved as {filename}")
-    except Exception as e:
-        print(f"Error saving DOC: {e}")
+def save_as_txt(text, filename):
+    with open(filename, 'w') as file:
+        file.write(text)
 
-def copy_to_clipboard(text):
-    try:
-        pyperclip.copy(text)
-        print("Summary copied to clipboard.")
-    except pyperclip.PyperclipException as e:
-        print(f"Error copying to clipboard: {e}")
+def process_summary(original_text, summary):
+    original_word_count = word_count(original_text)
+    summary_word_count = word_count(summary)
+
+    print("\n" + "=" * 50)
+    print("Summary:")
+    print(summary)
+    print("-" * 50)
+    print(f"Original word count: {original_word_count}")
+    print(f"Summary word count: {summary_word_count}")
+    print(f"Reduction: {original_word_count - summary_word_count} words ({(1 - summary_word_count/original_word_count)*100:.2f}%)")
+    print("=" * 50)
+
+def handle_download_options(summary):
+    download_choice = input("\nDo you want to download the summary? (Y/N): ").lower()
+    if download_choice == 'y':
+        format_choice = input("Choose format (PDF/DOCX/TXT): ").lower()
+        if format_choice == 'pdf':
+            filename = input("Enter filename for PDF: ")
+            filename = filename if filename.endswith('.pdf') else filename + '.pdf'
+            save_as_pdf(summary, filename)
+            print(f"Summary saved as {filename}")
+        elif format_choice == 'docx':
+            filename = input("Enter filename for DOCX: ")
+            filename = filename if filename.endswith('.docx') else filename + '.docx'
+            save_as_docx(summary, filename)
+            print(f"Summary saved as {filename}")
+        elif format_choice == 'txt':
+            filename = input("Enter filename for TXT: ")
+            filename = filename if filename.endswith('.txt') else filename + '.txt'
+            save_as_txt(summary, filename)
+            print(f"Summary saved as {filename}")
+        else:
+            print("Invalid format choice. Please try again.")
+    elif download_choice == 'n':
+        print("Download skipped.")
+    else:
+        print("Invalid choice. Please enter Y or N.")
 
 def main():
-    # Prompt user for input text
-    input_text = input("Enter the text you want to summarize: ").strip()
+    while True:
+        original_text = get_input()
 
-    # Prompt user for summary length
-    valid_lengths = ['short', 'medium', 'long']
-    summary_length = input("Enter summary length (short, medium, long): ").strip().lower()
-    while summary_length not in valid_lengths:
-        summary_length = input("Invalid input. Please enter summary length (short, medium, long): ").strip().lower()
+        length_options = {'s': 'short', 'm': 'medium', 'l': 'long'}
+        length = input("\nChoose summary length (S/M/L): ").lower()
+        while length not in length_options:
+            length = input("Invalid choice. Please enter S, M, or L: ").lower()
 
-    # Get summary
-    summary = get_summary(input_text, summary_length)
+        summary = summarize_text(original_text, length_options[length])
+        if summary:
+            process_summary(original_text, summary)
 
-    # Print original text word count and summary
-    if summary:
-        original_word_count = count_words(input_text)
-        summary_word_count = count_words(summary)
-        print(f"Original text word count: {original_word_count}")
-        print(f"Summarized text word count: {summary_word_count}")
-        print("Summary:", summary)
-        
-        # Ask user for the output format
-        output_format = input("Enter the format for download (txt, pdf, doc) or 'clipboard' to copy to clipboard: ").strip().lower()
-        
-        if output_format in ['txt', 'pdf', 'doc']:
-            filename = f"summary.{output_format}"
-            if output_format == 'txt':
-                save_as_txt(filename, summary)
-            elif output_format == 'pdf':
-                save_as_pdf(filename, summary)
-            elif output_format == 'doc':
-                save_as_doc(filename, summary)
-        
-        elif output_format == 'clipboard':
-            copy_to_clipboard(summary)
-        
-        else:
-            print("Invalid format selected.")
-    else:
-        print("Could not retrieve summary.")
+            copy_choice = input("\nDo you want to copy the summary to clipboard? (Y/N): ").lower()
+            if copy_choice == 'y':
+                pyperclip.copy(summary)
+                print("Summary copied to clipboard")
+
+            handle_download_options(summary)
+
+        continue_choice = input("\nDo you want to summarize another text? (Y/N): ").lower()
+        if continue_choice != 'y':
+            print("Thank you for using the summarizer. Goodbye!")
+            break
 
 if __name__ == "__main__":
     main()
+
+# In this magical world, animals spoke, and trees whispered ancient wisdom. Elara wandered through enchanted forests and shimmering lakes, discovering creatures and wonders she had only read about in books. She befriended a wise old owl named Orion, who guided her through the realm. Orion explained that the realm was a haven for stories and dreams, and that Elara had been chosen as the guardian of its tales. Her role was to listen to the stories of the realm and share them with the world beyond. After what felt like only moments, the portal reappeared, signaling that it was time for Elara to return. She bade farewell to Orion and the magical land, promising to cherish and share its stories. Back in the library, Elara found the book closed, but its cover now gleamed with a new, warm light. She knew that whenever she opened it, she would once again be connected to the magical realm she had come to love. From that day on, Elara’s tales captivated the village, and the library became a place where stories and dreams were cherished, bridging the magical world with the everyday. And so, the enchanted library continued to whisper its secrets, waiting for the next reader to discover its magic.

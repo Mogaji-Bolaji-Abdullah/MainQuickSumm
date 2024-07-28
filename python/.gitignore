@@ -1,0 +1,3 @@
+genaienv/
+*.env
+venv/

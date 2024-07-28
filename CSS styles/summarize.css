@@ -58,6 +58,7 @@ nav a:hover{
 h1 {
   text-align: center;
   font-size: 40px;
+  font-weight: bold;
   color: #121212;
   padding-top: 40px;
 }
@@ -290,6 +291,12 @@ footer{
 }
 .quicklink-container a:hover{
   color: #0866FF;
+}
+.contactus-container div{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
 }
 .contactus-container h4{
   margin-bottom: 10px;
@@ -648,6 +655,9 @@ footer{
   .contactus-container img{
     height: 11px;
     width: 11px;
+  }
+  .contactus-container div{
+    gap: 3px;
   }
   .copyright{
     font-size: 8px;
