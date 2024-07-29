@@ -25,32 +25,34 @@
             </a>
         </div>
     </header>
-    <div class="Form">
-    <div class="body">
-     <h2>Create Your Account</h2>
-     </div>
-         <div class="form-container">
-          <button class="google">
-               <img src="./images/Goggle logo 4 sign up page.png"/>
-             <p>Continue with Google</p></button>
-             <h4>OR</h4>
-             <form action="/cgi-bin/signup.py" method="post">
+    <div class="form">
+        <div class="body">
+            <h1>Create Your Account</h1>
+        </div>
+        <div class="form-container">
+            <button class="google">
+                <img src="./images/Goggle logo 4 sign up page.png"/>
+                <p>Continue with Google</p>
+            </button>
+            <h4>OR</h4>
+            <form action="/cgi-bin/signup.py" method="post">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                <input type="email" id="email" name="email" placeholder="Email address" required><br><br>
             
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br><br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br><br>
             
                 <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required><br><br>
             
-                 <div class="form-actions">
-                    <button type="submit">Sign Up</button>
-                 </div>
-                 <div class="form-links">
+                <div class="form-actions">
+                    <button class="button" type="submit">Sign Up</button>
+                </div>
+                <div class="form-links">
                     <h6>Already have an account?<a href="/SignIn.html">Sign in</a> </h6>
-            </div>
-             </form>
-     </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -17,7 +17,6 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  position: relative;
   padding: 0px 120px;
 }
 
@@ -61,45 +60,32 @@ nav a:hover {
   border: 2px solid #0866FF;
   border-radius: 10px;
 }
-.sign-in{
-
-    background-color: #0866FF;
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-}
-.sign-in:hover{
-    background-color: white;
-    color: #0866FF;
-    border: 2px solid #0866FF;
-    border-radius: 10px;
-}
-
 /* css for body form */
 
 .login-container {
-  height: 500px;
-  width: 814px;
-  margin: 20px auto;
+  margin: 0px 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding-top: 50px;
   background-color: #FEFCFF;
   border-radius: 10px;
 }
-
+.welcome-section{
+  text-align: center;
+}
 .welcome-section h1 {
   text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  color: black;
 }
 
 p {
   color: #868687;
   margin-top: 15px;
+  font-size: 15px;
 }
 
 #or {
@@ -142,11 +128,14 @@ p {
 /* form */
 .login-form {
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-form label {
   display: block;
-  font: 20px;
+  font-size: 18px;
 }
 
 input[type="email"], input[type="password"] {
@@ -160,11 +149,7 @@ input[type="email"], input[type="password"] {
   padding: 20px;
 }
 
-input[type="password"]:hover {
-  background-color: #d3d9de;
-}
-
-input[type="email"]:hover {
+input[type="email"]:hover, input[type="password"]:hover {
   background-color: #d3d9de;
 }
 
@@ -194,7 +179,7 @@ input[type="email"]:focus, input[type="password"]:focus {
   text-decoration: underline;
 }
 
-button {
+#sig {
   background-color: #0866FF;
   color: white;
   padding: 10px;
@@ -205,7 +190,7 @@ button {
   font-size: 15px;
   font-weight: 600;
 }
-button:hover{
+#sig:hover{
   background-color: white;
   color: #0866FF;
   border: 2px solid #0866FF
@@ -222,41 +207,20 @@ button:hover{
 .register a {
   color: #0866FF;
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 10px;
 }
 
 .register a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+/* X-large devices (large desktops, less than 1400px*/
+@media(max-width: 1400px){
 
-/* Media Queries */
+}
+/* Large devices (desktops, less than 1200px) */
+@media(max-width: 1200px){
 
-@media (max-width: 1024px) {
-  header {
-    height: auto;
-    padding: 20px;
-    flex-direction: column;
-  }
-
-  nav, .sign-in {
-    display: none;
-  }
-
-  header:hover nav, header:hover .sign-in {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .login-container {
-    width: 50%;
-    padding: 20px;
-  }
-
-  .google-login, input[type="email"], input[type="password"] {
-    width: 90%;
-  }
 }
 /* Medium devices (tablet, less than 992px)*/
 @media(max-width: 992px){
@@ -265,11 +229,12 @@ button:hover{
   }
   header{
     padding: 0px 80px;
-  } 
-  
-  
+  }
+  .login-container {
+    margin: 0px 80px;
+  }
 }
-
+/* Small devices (landscape phones, less than 768px)*/
 @media (max-width: 768px) {
   .logo{
     width: 100px;
@@ -289,17 +254,14 @@ button:hover{
     height: 30px;
   }
   .login-container {
-    width: 70%;
-  }
-
-  .google-login, input[type="email"], input[type="password"] {
-    width: 95%;
+    margin: 0px 50px;
   }
 
   #or {
     padding-left: 0;
     text-align: center;
   }
+  
 }
 /* X-small devices (potrait phones, less than 576px) */
 @media (max-width: 576px){
@@ -321,55 +283,39 @@ button:hover{
     width: 45px;
     height: 23px;
   }
-  
-}
-
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  nav a {
-    margin: 5px 0;
-  }
-
-  .sign-in {
-    width: 90%;
-    margin-top: 10px;
-  }
-
   .login-container {
-    width: 90%;
+    margin: 0px 15px;
   }
-
-  .google-login, input[type="email"], input[type="password"] {
-    width: 100%;
+  .welcome-section h1 {
+    font-size: 20px;
   }
-
-  #or {
-    padding-left: 0;
-    text-align: center;
+  p {
+    font-size: 13px;
   }
-}
-
-/* X-large devices (large desktops, less than 1400px*/
-@media(max-width: 1400px){
-
-}
-/* Large devices (desktops, less than 1200px) */
-@media(max-width: 1200px){
-
-}
-
-/* Small devices (landscape phones, less than 768px)*/
-@media(max-width: 768px){
+  #box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .google-login {
+    width: 250px;
+  }
+  .google-login img {
+    height: 20px;
+  }
   
+  .google-login p {
+    font-size: 16px;
+  }
+  .login-form label {
+    font-size: 15px;
+  }
+  
+  input[type="email"], input[type="password"] {
+    width: 250px;
+  }
+  #sig {
+    width: 250px;
+  }
 }
-

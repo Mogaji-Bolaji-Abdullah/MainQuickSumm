@@ -14,8 +14,9 @@ header{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: white;
+  padding: 0px 120px;
 }
 .logo{
   width: 140px;
@@ -52,24 +53,23 @@ nav a:hover{
   border-radius: 10px;
 }
 
-.Form{
-  height: 500px;
-  width: 814px;
-  margin: 20px auto;
+.form{
+  margin: 30px 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 16px;
-  padding-top: 5px; 
-  background-color: #FEFCFF;
-  border-radius: 10px;
+  background-color: #FEFCFF;;
 }
-
-.body h2{
-  color: #000000;
-  margin: 10px 0px;
-  padding-top: 100px;
+.body{
+  width: 100%;
+  padding-top: 20px;
+}
+.body h1{
+  font-size: 30px;
+  color: black;
+  font-weight: 700;
+  text-align: center;
 }
 
 .google{
@@ -103,61 +103,47 @@ nav a:hover{
   font-weight: 400;
 }
 
-.Form h4{
-  margin-top: 16px;
-}
 /* form*/
 .form-container {
   background-color: #FEFCFF;
-  border-radius: 16px;
-  /* padding: 20px; */
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-container h4{
   text-align: center;
   color: #858088;
   font-weight: 400;
-}
-
-/* form {
-  display: flex;
-  flex-direction: column;
-} */
-
-.form-group {
-  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: 20px;
-  margin-top: 16px;
+  font-size: 17px;
 }
 
 input[type="email"],
 input[type="password"] {
   width: 330px;
-  padding: 15px;
-  border: 0px solid #ccc;
-  outline: none;
-  border-radius: 4px;
-  box-sizing: border-box;
+  height: 50px;
+  border-radius: 8px;
+  margin-top: 8px;
   background-color: #F5F5F5;
+  border: none;
+  padding: 20px;
 }
 input[type="email"]:hover, input[type="password"]:hover {
   background-color: #d3d9de;
 }
 .form-actions {
   text-align: center;
-  margin-top: 20px;
 }
 
-button {
+.button {
   background-color: #0866FF;
   color: white;
   padding: 10px;
+  margin-top: 10px;
   width: 330px;
   border: none;
   border-radius: 10px;
@@ -165,7 +151,7 @@ button {
   font-size: 15px;
   font-weight: 600;
 }
-button:hover{
+.button:hover{
   background-color: white;
   color: #0866FF;
   border: 2px solid #0866FF
@@ -208,7 +194,9 @@ button:hover{
   header{
     padding: 0px 80px;
   } 
-  
+  .form{
+    margin: 30px 80px;
+  }
   
 }
 /* Small devices (landscape phones, less than 768px)*/
@@ -229,6 +217,10 @@ button:hover{
     font-size: 11px;
     width: 60px;
     height: 30px;
+    text-align: center;
+  }
+  .form{
+    margin: 30px 50px;
   }
 }
 
@@ -252,5 +244,37 @@ button:hover{
     width: 45px;
     height: 23px;
   }
-  
+  .form{
+    margin: 30px 15px;
+  }
+  .body h1{
+    font-size: 20px;
+  }
+  .form-container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .google{
+    width: 250px;
+  }
+  .google p{
+    font-size: 16px;
+  }
+  .google img{
+    width: 18px;
+  }
+  label {
+    font-size: 15px;
+  }
+  input[type="email"],
+  input[type="password"] {
+    max-width: 250px;
+  }
+  .button {
+    max-width: 250px;
+  }
+  .form-links h6{
+    font-size: 13px;
+  }
 }
