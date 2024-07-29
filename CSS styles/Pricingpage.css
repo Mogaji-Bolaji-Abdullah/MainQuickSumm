@@ -64,17 +64,26 @@ nav a:hover{
 .welcome-container{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0px;
   align-items: center;
 }
 .welcome-container h1{
   font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+.welcome-container p{
+  color: #868687;
+  text-align: center;
 }
 .plan-container{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+ul{
+  list-style-type: disc;
 }
 li{
   margin-left: 18px ;
@@ -86,10 +95,14 @@ li{
   flex-direction: column;
   gap: 20px;
   width: 350px;
-  height: 400px;
+  height: 450px;
   background-color: white;
   padding: 30px;
   border-radius: 10px;
+}
+.basic h1, .premium h1, .diamond h1{
+  font-size: 25px;
+  font-weight: bold;
 }
 .cost{
   color: #0866FF;
@@ -103,7 +116,7 @@ li{
 }
 .button-container{
   align-items: end;
-  height: 150px;
+  height: 200px;
   width: 200px;
   display: flex;
 }
@@ -192,7 +205,10 @@ footer{
 }
 /* Large devices (desktops, less than 1200px) */
 @media(max-width: 1200px){
-
+  .basic, .premium, .diamond{
+    width: 242px;
+    height: 500px;
+  }
 }
 /* Medium devices (tablet, less than 992px)*/
 @media(max-width: 992px){
@@ -201,8 +217,22 @@ footer{
   }
   header{
     padding: 0px 80px;
-  } 
-  
+  }
+  #hero{
+    padding: 50px 80px 100px 80px;
+  }
+  .plan-container{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .basic, .premium, .diamond{
+    width: 350px;
+    height: 450px;
+  }
+  ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   .footer-container{
     padding: 0px 80px;
   }
@@ -241,6 +271,12 @@ footer{
     font-size: 11px;
     width: 60px;
     height: 30px;
+  }
+  #hero{
+    padding: 50px 50px 100px 80px;
+  }
+  .welcome-container h1{
+    font-size: 30px;
   }
   footer{
     height: 250px;
@@ -288,6 +324,25 @@ footer{
     width: 45px;
     height: 23px;
 
+  }
+  #hero{
+    padding: 50px 15px 80px 15px;
+  }
+  .welcome-container h1{
+    font-size: 25px;
+  }
+  .welcome-container p{
+    font-size: 13px;
+  }
+  .basic, .premium, .diamond{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 270px;
+    height: 480px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
   }
   footer{
     height: 250px;

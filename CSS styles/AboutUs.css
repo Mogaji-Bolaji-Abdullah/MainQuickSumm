@@ -126,10 +126,12 @@ nav a:hover{
 }
 .text-preview h1{
   font-size: 40px;
+  font-weight: 700;
   color: #0866FF;
 }
 .text-preview p{
   font-size: 18px;
+  color: #868687;
 }
 .team{
   display: flex;
@@ -139,7 +141,9 @@ nav a:hover{
 }
 .team h1{
   font-size: 40px;
+  font-weight: 500;
   text-align: center;
+  color: #434343;
 }
 .team-container{
   display: grid;
@@ -234,7 +238,19 @@ footer{
   header{
     padding: 0px 80px;
   } 
-  
+  #hero{
+    padding: 50px 80px 100px 80px;
+  }
+  .text-preview h1{
+    font-size: 30px;
+  }
+  .text-preview p{
+    font-size: 15px;
+  }
+  .team-preview img{
+    width: 300px;
+    height: 200px;
+  }
   .footer-container{
     padding: 0px 80px;
   }
@@ -273,6 +289,21 @@ footer{
     font-size: 11px;
     width: 60px;
     height: 30px;
+  }
+  #hero{
+    padding: 50px 50px 100px 50px;
+  }
+  .text-preview h1{
+    font-size: 25px;
+  }
+  .text-preview p{
+    font-size: 13px;
+  }
+  .team h1{
+    font-size: 30px;
+  }
+  .team-preview p{
+    font-size: 15px;
   }
   footer{
     height: 250px;
@@ -320,6 +351,25 @@ footer{
     width: 45px;
     height: 23px;
 
+  }
+  #hero{
+    padding: 50px 15px 50px 15px;
+  }
+  .text-preview h1{
+    font-size: 20px;
+  }
+  .text-preview p{
+    font-size: 11px;
+  }
+  .team h1{
+    font-size: 25px;
+  }
+  .team-preview img{
+    width: 200px;
+    height: 100px;
+  }
+  .team-preview p{
+    font-size: 11px;
   }
   footer{
     height: 250px;
