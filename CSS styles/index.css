@@ -56,7 +56,7 @@ nav a:hover{
 
 /*Hero styling*/
 #hero{
-  height: 750px;
+  height: 850px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,7 +92,7 @@ nav a:hover{
   cursor: pointer;
 }
 video{
-  width: 600px;
+  width: 800px;
 }
 
 /*Assistance styling*/
@@ -321,7 +321,7 @@ footer{
     padding: 0px 80px;
   }
   #hero{
-    height: 650px;
+    height: 700px;
   }
   #hero h1{
     font-size: 45px;
@@ -330,7 +330,7 @@ footer{
     font-size: 15px;
   }
   video{
-    width: 500px;
+    width: 600px;
   }
   .assitance-container h3{
     font-size: 25px;
