@@ -75,6 +75,7 @@ nav a:hover{
 .welcome-container p{
   color: #868687;
   text-align: center;
+  margin-top: 10px;
 }
 .plan-container{
   display: flex;
@@ -94,7 +95,7 @@ li{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 350px;
+  width: 310px;
   height: 450px;
   background-color: white;
   padding: 30px;
